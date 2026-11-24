@@ -1,0 +1,94 @@
+[
+  {
+    "nome": "Banco A",
+    "tipo": "conta",
+    "separador": ";",
+    "codificacao": "utf-8",
+    "linhasCabecalho": 1,
+    "formatoData": "DD/MM/AAAA",
+    "separadorDecimal": ",",
+    "colunaData": 0,
+    "colunaDescricao": 1,
+    "modoValor": "unica",
+    "colunaValor": 2,
+    "inverterSinal": false
+  },
+  {
+    "nome": "Banco B",
+    "tipo": "conta",
+    "separador": ",",
+    "codificacao": "latin1",
+    "linhasCabecalho": 1,
+    "formatoData": "AAAA-MM-DD",
+    "separadorDecimal": ".",
+    "colunaData": 0,
+    "colunaDescricao": 1,
+    "modoValor": "debitoCredito",
+    "colunaDebito": 2,
+    "colunaCredito": 3,
+    "inverterSinal": false
+  },
+  {
+    "nome": "Banco Inter",
+    "tipo": "conta",
+    "separador": ";",
+    "codificacao": "utf-8",
+    "linhasCabecalho": 6,
+    "formatoData": "DD/MM/AAAA",
+    "separadorDecimal": ",",
+    "colunaData": 0,
+    "colunaDescricao": [
+      1,
+      2
+    ],
+    "modoValor": "unica",
+    "colunaValor": 3,
+    "inverterSinal": false
+  },
+  {
+    "nome": "Cartão Exemplo",
+    "tipo": "cartao",
+    "diaFechamento": 5,
+    "separador": ";",
+    "codificacao": "utf-8",
+    "linhasCabecalho": 1,
+    "formatoData": "DD/MM/AAAA",
+    "separadorDecimal": ",",
+    "colunaData": 0,
+    "colunaDescricao": 1,
+    "modoValor": "unica",
+    "colunaValor": 2,
+    "inverterSinal": true
+  },
+  {
+    "nome": "Caixa",
+    "tipo": "conta",
+    "separador": ";",
+    "codificacao": "utf-8",
+    "linhasCabecalho": 1,
+    "formatoData": "DD/MM/AAAA",
+    "separadorDecimal": ",",
+    "colunaData": 0,
+    "colunaDescricao": [
+      3,
+      4
+    ],
+    "modoValor": "unica",
+    "colunaValor": 6,
+    "inverterSinal": false
+  },
+  {
+    "nome": "Nubank",
+    "tipo": "conta",
+    "separador": ",",
+    "codificacao": "utf-8",
+    "linhasCabecalho": 1,
+    "formatoData": "DD/MM/AAAA",
+    "separadorDecimal": ".",
+    "colunaData": 0,
+    "colunaDescricao": 3,
+    "modoValor": "unica",
+    "colunaValor": 1,
+    "inverterSinal": false
+  }
+]

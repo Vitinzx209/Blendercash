@@ -1,0 +1,44 @@
+{
+  "name": "blendercash",
+  "productName": "Blendercash",
+  "version": "1.0.0",
+  "description": "Controle financeiro a partir dos extratos CSV do banco",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "terminal": "node ler.js",
+    "icone": "electron scripts/gerar-icone.js",
+    "dist": "electron-builder --win portable"
+  },
+  "author": "Vitor",
+  "license": "ISC",
+  "build": {
+    "appId": "com.vitor.blendercash",
+    "productName": "Blendercash",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "renderer/**/*",
+      "config/**/*",
+      "build/icone.png"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icone.ico",
+      "signExecutable": false
+    },
+    "portable": {
+      "artifactName": "Blendercash.exe"
+    }
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "electron": "^45.3.3",
+    "electron-builder": "^26.18.0"
+  }
+}

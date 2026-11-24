@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
+  <title>Blendercash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="tela-cadeado" id="cadeado" hidden>
+    <form class="glass cadeado-caixa" id="cadeado-form" novalidate>
+      <div class="logo logo-grande" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6.5"></path></svg>
+      </div>
+      <h1 class="cadeado-titulo">Blendercash está trancado</h1>
+      <p class="rotulo">Digite a sua senha pra ver os seus dados.</p>
+      <div class="campo-grupo">
+        <label class="rotulo" for="cadeado-senha">Senha</label>
+        <input class="campo" id="cadeado-senha" type="password" autocomplete="current-password">
+      </div>
+      <p class="modal-erro" id="cadeado-erro" role="alert" hidden></p>
+      <button type="submit" class="glass btn btn-main cadeado-botao">Destrancar</button>
+    </form>
+  </div>
+
+  <div class="layout" id="layout">
+
+    <header class="topo">
+      <div class="topo-linha">
+        <div class="marca">
+          <div class="logo" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6.5"></path></svg>
+          </div>
+          <span class="marca-nome">Blendercash</span>
+        </div>
+
+        <div class="perfil" id="perfil">
+          <button type="button" class="perfil-botao" id="perfil-botao" aria-haspopup="true" aria-expanded="false" aria-controls="perfil-card" title="Seu perfil">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+            <span class="perfil-ponto" aria-hidden="true"></span>
+          </button>
+
+          <div class="perfil-card" id="perfil-card" role="menu" aria-label="Seu perfil" hidden>
+            <div class="perfil-cabeca">
+              <div class="perfil-avatar" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+              </div>
+              <div class="perfil-textos">
+                <span class="perfil-titulo">Seus dados</span>
+                <span class="perfil-sub" id="info-total">—</span>
+                <span class="perfil-salvo"><span class="ponto-salvo" aria-hidden="true"></span>Salvo neste computador</span>
+              </div>
+            </div>
+
+            <div class="perfil-opcoes">
+              <button type="button" class="perfil-opcao" id="botao-senha" role="menuitem">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+                <span class="perfil-opcao-textos">
+                  <span id="texto-senha">Proteger com senha</span>
+                  <span class="perfil-opcao-dica">Pede senha ao abrir o app</span>
+                </span>
+              </button>
+              <button type="button" class="perfil-opcao" id="botao-exportar" role="menuitem">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"></path></svg>
+                <span class="perfil-opcao-textos">
+                  <span>Backup</span>
+                  <span class="perfil-opcao-dica">Salva uma cópia de tudo num arquivo</span>
+                </span>
+              </button>
+              <button type="button" class="perfil-opcao" id="botao-restaurar" role="menuitem">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V8M7 13l5-5 5 5M5 4h14"></path></svg>
+                <span class="perfil-opcao-textos">
+                  <span>Restaurar</span>
+                  <span class="perfil-opcao-dica">Volta os dados de um backup</span>
+                </span>
+              </button>
+              <button type="button" class="perfil-opcao" id="botao-apagar" role="menuitem">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>
+                <span class="perfil-opcao-textos">
+                  <span>Apagar transações</span>
+                  <span class="perfil-opcao-dica">Zera o extrato (regras e contas ficam)</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="abas" aria-label="Menu principal">
+        <button type="button" class="nav nav-on" data-tela="visao">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="2"></rect><rect x="14" y="3" width="7" height="5" rx="2"></rect><rect x="14" y="12" width="7" height="9" rx="2"></rect><rect x="3" y="16" width="7" height="5" rx="2"></rect></svg>
+          Visão geral
+        </button>
+        <button type="button" class="nav" data-tela="transacoes">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+          Transações
+        </button>
+        <button type="button" class="nav" data-tela="ano">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+          Resumo do ano
+        </button>
+        <button type="button" class="nav" data-tela="categorias">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>
+          Categorias e tetos
+        </button>
+        <button type="button" class="nav" data-tela="recorrentes">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="M7 22l-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+          Contas fixas
+        </button>
+        <button type="button" class="nav" data-tela="cartoes">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20M6 15h4"></path></svg>
+          Cartões
+        </button>
+        <button type="button" class="nav" data-tela="bancos">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v9M19 10v9M9 10v9M15 10v9M3 21h18"></path></svg>
+          Bancos
+        </button>
+      </nav>
+    </header>
+
+    <main id="conteudo" class="conteudo"></main>
+  </div>
+
+  <div class="fundo-modal" id="janela" hidden>
+    <form class="glass modal" id="janela-form" role="dialog" aria-modal="true" aria-labelledby="janela-titulo" novalidate>
+      <h2 id="janela-titulo"></h2>
+      <div id="janela-corpo" class="janela-corpo"></div>
+      <p class="modal-erro" id="janela-erro" role="alert" hidden></p>
+      <div class="linha-botoes" id="janela-botoes"></div>
+    </form>
+  </div>
+
+  <div class="rolagem" id="rolagem" aria-hidden="true"><div class="rolagem-traco" id="rolagem-traco"></div></div>
+
+  <div class="glass aviso" id="aviso" role="status" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

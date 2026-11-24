@@ -1,0 +1,45 @@
+# Dependências e builds
+node_modules/
+dist/
+
+# Dados financeiros: NUNCA vão pro git
+dados.json
+*backup*.json
+antes-de-*.json
+orcamentos.json
+recorrentes.json
+saldos.json
+lembretes_avisados.json
+perfis_removidos.json
+contas_ignoradas.json
+
+# Segredos: chaves de API, senhas, certificados, logins
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.crt
+*.cer
+credentials*.json
+secrets*.json
+*.secret
+.npmrc
+token*.txt
+
+# Claude Code (configurações locais, memória, sessões)
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+
+# Editores
+.vscode/
+.idea/
+
+# Saída do graphify e temporários
+graphify-out/
+*.tmp
+.DS_Store
+Thumbs.db
